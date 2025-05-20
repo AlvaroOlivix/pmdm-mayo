@@ -41,4 +41,8 @@ class ClientDataRepository(
         localClientDataRepository.deleteClient(client)
     }
 
+    override suspend fun saveClient(client: Client) {
+        localClientDataRepository.saveClient(client)
+    }
+
 }

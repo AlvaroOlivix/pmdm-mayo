@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import edu.example.pmdm_mayo.R
 import edu.example.pmdm_mayo.databinding.FragmentListClientsBinding
 import edu.example.pmdm_mayo.feature.client.presentation.adapter.ClientsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,7 +37,25 @@ class ClientsFragment : Fragment() {
         adapter = ClientsAdapter(onCLickDetail = {}, deleteCLick = { viewModel.deleteClient(it) })
         setUpRecycler()
         setUpObserver()
+        setUpToolBar()
         viewModel.loadClientList()
+    }
+
+
+    private fun setUpToolBar() {
+        binding.apply {
+            CtoolBar.topAppBar.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.boton_add -> {
+                        navigateToFormAdd()
+                        true
+                    }
+
+                    else -> false
+                }
+
+            }
+        }
     }
 
     private fun setUpObserver() {
@@ -58,7 +78,10 @@ class ClientsFragment : Fragment() {
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             recyclerClients.adapter = adapter
         }
+    }
 
+    private fun navigateToFormAdd() {
+        findNavController().navigate(ClientsFragmentDirections.naviateToForm())
     }
 
     override fun onDestroyView() {
@@ -66,3 +89,4 @@ class ClientsFragment : Fragment() {
         _binding = null
     }
 }
+
