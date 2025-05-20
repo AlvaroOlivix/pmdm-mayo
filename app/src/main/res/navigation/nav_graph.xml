@@ -10,13 +10,21 @@
         android:name="edu.example.pmdm_mayo.feature.client.presentation.ClientsFragment"
         tools:layout="@layout/fragment_list_clients">
         <action
-            android:id="@+id/naviate_to_form"
+            android:id="@+id/naviate_to_form_client"
             app:destination="@id/form_client" />
+        <action
+            android:id="@+id/naviate_to_form_sales"
+            app:destination="@id/form_sales" />
     </fragment>
     <fragment
         android:id="@+id/form_client"
         android:name="edu.example.pmdm_mayo.feature.client.presentation.CreateClientFragment"
         tools:layout="@layout/client_form">
+    </fragment>
+    <fragment
+        android:id="@+id/form_sales"
+        android:name="edu.example.pmdm_mayo.feature.client.presentation.SalesFormFragment"
+        tools:layout="@layout/sales_form">
 
     </fragment>
 

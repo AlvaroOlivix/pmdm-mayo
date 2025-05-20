@@ -50,6 +50,10 @@ class ClientsFragment : Fragment() {
                         navigateToFormAdd()
                         true
                     }
+                    R.id.boton_venta -> {
+                    navigateToFornSales()
+                    true
+                }
 
                     else -> false
                 }
@@ -81,7 +85,10 @@ class ClientsFragment : Fragment() {
     }
 
     private fun navigateToFormAdd() {
-        findNavController().navigate(ClientsFragmentDirections.naviateToForm())
+        findNavController().navigate(ClientsFragmentDirections.naviateToFormClient())
+    }
+    private fun navigateToFornSales() {
+        findNavController().navigate(ClientsFragmentDirections.naviateToFormSales())
     }
 
     override fun onDestroyView() {
