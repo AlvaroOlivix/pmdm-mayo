@@ -4,4 +4,5 @@ interface ClientRepository {
     suspend fun getAll():List<Client>
     suspend fun getClientByDni(clientDni:String):Client?
     suspend fun deleteCLient(client:Client)
+    suspend fun saveClient(client: Client)
 }

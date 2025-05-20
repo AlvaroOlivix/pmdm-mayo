@@ -8,6 +8,16 @@
     <fragment
         android:id="@+id/client_list_fragment"
         android:name="edu.example.pmdm_mayo.feature.client.presentation.ClientsFragment"
-        tools:layout="@layout/fragment_list_clients" />
+        tools:layout="@layout/fragment_list_clients">
+        <action
+            android:id="@+id/naviate_to_form"
+            app:destination="@id/form_client" />
+    </fragment>
+    <fragment
+        android:id="@+id/form_client"
+        android:name="edu.example.pmdm_mayo.feature.client.presentation.CreateClientFragment"
+        tools:layout="@layout/client_form">
+
+    </fragment>
 
 </navigation>
