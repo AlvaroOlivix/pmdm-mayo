@@ -16,8 +16,7 @@ import org.koin.android.annotation.KoinViewModel
 @KoinViewModel
 class ClientsViewModel(
     private val getClientList: GetClientsUseCase,
-    private val deleteCLientUseCase: DeleteClientUseCase,
-    private val saveClientUseCase: SaveClientUseCase
+    private val deleteCLientUseCase: DeleteClientUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(CUiState())
